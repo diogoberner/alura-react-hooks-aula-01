@@ -1,8 +1,11 @@
 import styles from "./styles.module.css";
 
 import BotaoModo from "./BotaoModo";
+import { useContext } from "react";
+import { TimerContext } from "../../../context/TimerContent";
 
-const BotoesModos = ({ modos, modoAtual, onModoSelecionado }) => {
+const BotoesModos = ({ onModoSelecionado }) => {
+  const { modos, modoAtual } = useContext(TimerContext);
   return (
     <ul className={styles["cronometer-modes"]}>
       {modos.map((m) => (
