@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { TasksContext } from "../../../context/TasksContext";
 
 const MenuOpcoes = () => {
-  const { removeCompletedTasks, removeAllTasks } = useContext(TasksContext);
+  const { dispatch } = useContext(TasksContext);
 
   return (
     <div className={styles["dropdown"]}>
@@ -19,7 +19,7 @@ const MenuOpcoes = () => {
             icone={checkImg}
             className={styles["dropdown__button"]}
             id="btn-remover-concluidas"
-            onClick={removeCompletedTasks}
+            onClick={() => dispatch({ type: "removeCompleted" })}
           >
             Limpar tarefas concluídas
           </Botao>
@@ -29,7 +29,7 @@ const MenuOpcoes = () => {
             icone={trashImg}
             className={styles["dropdown__button"]}
             id="btn-remover-concluidas"
-            onClick={removeAllTasks}
+            onClick={() => dispatch({ type: "removeAll" })}
           >
             Limpar todas as tarefas
           </Botao>

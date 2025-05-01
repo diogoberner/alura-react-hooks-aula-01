@@ -6,7 +6,7 @@ import { TasksContext } from "../../../context/TasksContext";
 
 const FormularioTarefas = () => {
   const [texto, setTexto] = useState("");
-  const { adicionarTarefa, exibirFormulario, setExibirFormulario } = useContext(TasksContext);
+  const { exibirFormulario, setExibirFormulario, dispatch } = useContext(TasksContext);
 
   return (
     <form
@@ -20,7 +20,7 @@ const FormularioTarefas = () => {
         placeholder="No que você está trabalhando?"
       />
       <RodapeTarefas
-        aoSalvar={() => adicionarTarefa(texto)}
+        aoSalvar={() => dispatch({ type: "addTask", payload: texto })}
         aoCancelar={() => setExibirFormulario(false)}
       />
     </form>

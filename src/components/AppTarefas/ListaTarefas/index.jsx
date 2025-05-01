@@ -6,7 +6,7 @@ import trashImg from "/src/assets/imgs/trash.svg";
 import { TasksContext } from "../../../context/TasksContext";
 
 const ListaTarefas = () => {
-  const { tarefas, deleteTask, completeTask } = useContext(TasksContext);
+  const { tarefas, dispatch } = useContext(TasksContext);
 
   return (
     <ul className={styles["tasks__task-list"]}>
@@ -19,14 +19,19 @@ const ListaTarefas = () => {
             icone={checkImg}
             id="marcar-tarefa-como-concluida"
             className={`${styles["check-task__button"]} ${tarefa.concluida ? styles["check-task__button--complete"] : ""}`}
-            onClick={() => completeTask(tarefa.id, tarefa.concluida)}
+            onClick={() =>
+              dispatch({
+                type: "taskCompleted",
+                payload: tarefa.id,
+              })
+            }
           />
           <p className={styles["tasks__task-list-item-description"]}>{tarefa.texto}</p>
           <Botao
             icone={trashImg}
             id="deletar-tarefa"
             className={`${styles["delete-task__button"]}`}
-            onClick={() => deleteTask(tarefa.id)}
+            onClick={() => dispatch({ type: "deleteTask", payload: tarefa.id })}
           />
         </li>
       ))}
