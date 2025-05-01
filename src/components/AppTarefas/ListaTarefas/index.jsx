@@ -1,12 +1,11 @@
-import { useContext } from "react";
+import useTasksContext from "../../../hooks/useTasksContext";
 import Botao from "../Botao";
 import styles from "../styles.module.css";
 import checkImg from "/src/assets/imgs/check-task.png";
 import trashImg from "/src/assets/imgs/trash.svg";
-import { TasksContext } from "../../../context/TasksContext";
 
 const ListaTarefas = () => {
-  const { tarefas, dispatch } = useContext(TasksContext);
+  const { tarefas, dispatch } = useTasksContext();
 
   return (
     <ul className={styles["tasks__task-list"]}>

@@ -1,12 +1,12 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import CampoTexto from "../CampoTexto";
 import RodapeTarefas from "../RodapeTarefas";
 import styles from "../styles.module.css";
-import { TasksContext } from "../../../context/TasksContext";
+import useTasksContext from "../../../hooks/useTasksContext";
 
 const FormularioTarefas = () => {
   const [texto, setTexto] = useState("");
-  const { exibirFormulario, setExibirFormulario, dispatch } = useContext(TasksContext);
+  const { exibirFormulario, setExibirFormulario, dispatch } = useTasksContext();
 
   return (
     <form

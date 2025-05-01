@@ -3,11 +3,10 @@ import moreImg from "/src/assets/imgs/more.svg";
 import checkImg from "/src/assets/imgs/check.svg";
 import trashImg from "/src/assets/imgs/trash.svg";
 import Botao from "../Botao";
-import { useContext } from "react";
-import { TasksContext } from "../../../context/TasksContext";
+import useTasksContext from "../../../hooks/useTasksContext";
 
 const MenuOpcoes = () => {
-  const { dispatch } = useContext(TasksContext);
+  const { dispatch } = useTasksContext();
 
   return (
     <div className={styles["dropdown"]}>
