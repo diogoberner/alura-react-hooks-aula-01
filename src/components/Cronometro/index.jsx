@@ -5,7 +5,7 @@ import Timer from "./Timer";
 import SwitchMusica from "./SwitchMusica";
 import BotaoCronometro from "./BotaoCronometro";
 import { useContext, useEffect, useRef } from "react";
-import { TimerContext } from "../../context/TimerContent";
+import { TimerContext } from "../../context/TimerContext";
 
 export default function Cronometro() {
   const musicaRef = useRef(null);

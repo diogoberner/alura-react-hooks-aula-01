@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 import play_arrowImg from "/src/assets/imgs/play_arrow.png";
 import pauseImg from "/src/assets/imgs/pause.png";
 import { useContext } from "react";
-import { TimerContext } from "../../../context/TimerContent";
+import { TimerContext } from "../../../context/TimerContext";
 
 const BotaoCronometro = ({ onClick }) => {
   const { emExecucao } = useContext(TimerContext);

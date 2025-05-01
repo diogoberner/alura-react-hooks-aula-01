@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 
 import BotaoModo from "./BotaoModo";
 import { useContext } from "react";
-import { TimerContext } from "../../../context/TimerContent";
+import { TimerContext } from "../../../context/TimerContext";
 
 const BotoesModos = ({ onModoSelecionado }) => {
   const { modos, modoAtual } = useContext(TimerContext);

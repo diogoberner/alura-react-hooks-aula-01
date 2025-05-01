@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import styles from "./styles.module.css";
-import { TimerContext } from "../../../context/TimerContent";
+import { TimerContext } from "../../../context/TimerContext";
 
 export default function Timer() {
   const { tempoRestante } = useContext(TimerContext);

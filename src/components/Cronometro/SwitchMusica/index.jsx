@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 import { useEffect } from "react";
 import musicaSom from "/src/assets/sons/luna-rise-part-one.mp3";
 
-const SwitchMusica = forwardRef(function SwitchMusica(ref) {
+const SwitchMusica = forwardRef(function SwitchMusica({ props }, ref) {
   const musicaRef = useRef(null);
 
   useEffect(() => {
