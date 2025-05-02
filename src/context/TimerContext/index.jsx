@@ -9,17 +9,17 @@ export const TimerProvider = ({ children }) => {
     {
       id: "foco",
       nome: "Foco",
-      duracao: 25, // em minutos
+      duracao: 25 * 60, // em minutos
     },
     {
       id: "pausa_curta",
       nome: "Pausa curta",
-      duracao: 5, // em minutos
+      duracao: 5 * 60, // em minutos
     },
     {
       id: "pausa_longa",
       nome: "Pausa longa",
-      duracao: 15, // em minutos
+      duracao: 15 * 60, // em minutos
     },
   ]);
   const [modoAtual, setModoAtual] = useState(modos[0]);

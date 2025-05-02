@@ -2,9 +2,12 @@ import { useContext } from "react";
 import { TasksContext } from "../context/TasksContext";
 
 const useTasksContext = () => {
-  const { tarefas, exibirFormulario, setExibirFormulario, dispatch } = useContext(TasksContext);
+  const context = useContext(TasksContext);
+  if (!context) {
+    throw new Error("useTasksContext deve ser usado dentro de um TasksProvider!");
+  }
 
-  return { tarefas, exibirFormulario, setExibirFormulario, dispatch };
+  return context;
 };
 
 export default useTasksContext;
